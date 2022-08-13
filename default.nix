@@ -14,11 +14,8 @@
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  example-package = pkgs.callPackage ./pkgs/example-package { };
   monaco = pkgs.callPackage ./pkgs/monaco { };
   pingfang = pkgs.callPackage ./pkgs/pingfang { };
   apple-color-emoji = pkgs.callPackage ./pkgs/apple-color-emoji { };
   hmcl = pkgs.callPackage ./pkgs/hmcl { };
-  # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
-  # ...
 }

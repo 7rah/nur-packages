@@ -1,11 +1,12 @@
 { lib, stdenvNoCC, fetchurl, ... }:
 
-stdenvNoCC.mkDerivation rec{
+stdenvNoCC.mkDerivation rec {
   pname = "apple-color-emoji";
   version = "apple";
 
   src = fetchurl {
-    url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/ios-15.4/AppleColorEmoji.ttf";
+    url =
+      "https://github.com/samuelngs/apple-emoji-linux/releases/download/ios-15.4/AppleColorEmoji.ttf";
     sha256 = "CDmtLCzlytCZyMBDoMrdvs3ScHkMipuiXoNfc6bfimw=";
   };
   dontUnpack = true;
