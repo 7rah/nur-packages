@@ -21,6 +21,6 @@ stdenvNoCC.mkDerivation rec{
     description = "Monaco font";
     license = licenses.unfree;
     platforms = platforms.all;
-    maintainers = with maintainers; [ 7rah ];
+    maintainers = with maintainers; [ "7rah" ];
   };
 }

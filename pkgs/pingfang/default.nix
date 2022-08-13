@@ -24,6 +24,6 @@ stdenvNoCC.mkDerivation rec{
     description = "PingFang <-- Apple default font for Chinese";
     license = licenses.gpl3;
     platforms = platforms.all;
-    maintainers = with maintainers; [ 7rah ];
+    maintainers = with maintainers; [ "7rah" ];
   };
 }

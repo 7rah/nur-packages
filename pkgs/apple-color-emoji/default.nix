@@ -19,6 +19,6 @@ stdenvNoCC.mkDerivation rec{
     description = "apple-color-emoji <-- Apple emoji font";
     license = licenses.unfree;
     platforms = platforms.all;
-    maintainers = with maintainers; [ 7rah ];
+    maintainers = with maintainers; [ "7rah" ];
   };
 }
