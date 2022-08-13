@@ -1,25 +1,23 @@
 { lib, stdenvNoCC, fetchurl, ... }:
 
 stdenvNoCC.mkDerivation rec{
-  pname = "monaco";
+  pname = "apple-color-emoji";
   version = "apple";
 
   src = fetchurl {
-    url = "https://github.com/taodongl/monaco.ttf/raw/9dcce033447e83521c66172575fa45c9d0c0b744/monaco.ttf";
-    sha256 = "sha256-fGfOgFtSM4gimY6zCa7kC1BYY7nLh3YIBmjipOWpkCU=";
+    url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/ios-15.4/AppleColorEmoji.ttf";
+    sha256 = "CDmtLCzlytCZyMBDoMrdvs3ScHkMipuiXoNfc6bfimw=";
   };
-
   dontUnpack = true;
 
-
   installPhase = ''
-    ls
     mkdir -p $out/share/fonts/truetype
-    cp $src $out/share/fonts/truetype
+    pwd
+    cp $src $out/share/fonts/truetype/AppleColorEmoji.ttf
   '';
 
   meta = with lib; {
-    description = "Monaco font";
+    description = "apple-color-emoji <-- Apple emoji font";
     license = licenses.unfree;
     platforms = platforms.all;
     maintainers = with maintainers; [ 7rah ];
