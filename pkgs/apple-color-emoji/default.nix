@@ -12,7 +12,6 @@ stdenvNoCC.mkDerivation rec{
 
   installPhase = ''
     mkdir -p $out/share/fonts/truetype
-    pwd
     cp $src $out/share/fonts/truetype/AppleColorEmoji.ttf
   '';
 

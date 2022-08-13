@@ -13,7 +13,6 @@ stdenvNoCC.mkDerivation rec{
 
 
   installPhase = ''
-    ls
     mkdir -p $out/share/fonts/truetype
     cp $src $out/share/fonts/truetype
   '';

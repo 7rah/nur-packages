@@ -16,7 +16,6 @@ stdenvNoCC.mkDerivation rec{
   '';
 
   installPhase = ''
-    ls -a
     mkdir -p $out/share/fonts/truetype
     cp PingFang-895efd9d64d4cf6350110de759539b454d0a7f68/*.ttf $out/share/fonts/truetype
   '';
