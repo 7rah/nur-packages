@@ -1,30 +1,26 @@
-{ lib, stdenvNoCC, unzip, fetchurl, ... }:
-
+{ stdenvNoCC, unzip, fetchurl, }:
 stdenvNoCC.mkDerivation rec {
-  pname = "PingFang";
+  pname = "pingfang";
   version = "apple";
 
   src = fetchurl {
+    name = "PingFang";
     url =
-      "https://github.com/ShmilyHTT/PingFang/archive/895efd9d64d4cf6350110de759539b454d0a7f68.zip";
-    sha256 = "sha256-fpEHcHZSnIYzOcoud5OSW44S9QDme1lnIyEuOZ2ZUQ8=";
+      "https://github.com/mlyxshi/Ping-Fang/releases/download/v1.0/release.zip";
+    sha256 = "ocSL4kFdnbcENGngPc57fq86zgEqFOCWOBspXFRmsqg=";
   };
 
   buildInputs = [ unzip ];
+
+  phases = [ "unpackPhase" "installPhase" ];
 
   unpackPhase = ''
     unzip $src
   '';
 
   installPhase = ''
-    mkdir -p $out/share/fonts/truetype
-    cp PingFang-895efd9d64d4cf6350110de759539b454d0a7f68/*.ttf $out/share/fonts/truetype
+    install -m444 -Dt  $out/share/fonts/truetype  *.ttf
   '';
 
-  meta = with lib; {
-    description = "PingFang <-- Apple default font for Chinese";
-    license = licenses.gpl3;
-    platforms = platforms.all;
-    maintainers = with maintainers; [ "7rah" ];
-  };
+  meta = { description = "PingFang <-- Apple default font for Chinese"; };
 }
