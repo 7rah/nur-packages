@@ -18,4 +18,5 @@
   pingfang = pkgs.callPackage ./pkgs/pingfang { };
   apple-color-emoji = pkgs.callPackage ./pkgs/apple-color-emoji { };
   hmcl = pkgs.callPackage ./pkgs/hmcl { };
+  san-francisco-mono-font = pkgs.callPackage ./pkgs/san-francisco-mono { };
 }
