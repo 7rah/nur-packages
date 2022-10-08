@@ -1,13 +1,13 @@
 { lib, stdenvNoCC, fetchurl, jre, libpulseaudio, alsa-lib, flite, makeWrapper
 , makeDesktopItem, ... }:
-let version = "3.5.3.221";
+let version = "3.5.3.223";
 in stdenvNoCC.mkDerivation rec {
   name = "hmcl";
 
   src = fetchurl {
     url =
       "https://github.com/huanghongxun/HMCL/releases/download/v${version}/HMCL-${version}.jar";
-    sha256 = "sha256-siGq4bdMZQAB7xF3gpI3Qir0orjVWACmUU7XpattFzk=";
+    sha256 = "sha256-8g2FMvAiAKfxJUY0G7wl6d44wOpVsknFHGZ85IkOzFc=";
   };
 
   icon = fetchurl {
