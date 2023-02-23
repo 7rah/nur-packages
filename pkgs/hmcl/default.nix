@@ -1,13 +1,13 @@
 { lib, stdenvNoCC, fetchurl, jre, libpulseaudio, alsa-lib, flite, makeWrapper
-, makeDesktopItem, ... }:
-let version = "3.5.3.227";
+, makeDesktopItem, copyDesktopItems, ... }:
+let version = "3.5.3.230";
 in stdenvNoCC.mkDerivation rec {
   name = "hmcl";
 
   src = fetchurl {
     url =
       "https://github.com/huanghongxun/HMCL/releases/download/v${version}/HMCL-${version}.jar";
-    sha256 = "sha256-bq3YqNwDtASJUt6uCTdMAIBPLfmVrGu1xVCFno0JwK0=";
+    sha256 = "sha256-EbI+LaEGIv6BxtwrRkABY/zRmt6YOC7NFh0vPvOAuOY=";
   };
 
   icon = fetchurl {
@@ -19,7 +19,7 @@ in stdenvNoCC.mkDerivation rec {
   dontUnpack = true;
   runtimeLibraryPath = lib.makeLibraryPath [ libpulseaudio alsa-lib flite ];
 
-  nativeBuildInputs = [ makeWrapper ];
+  nativeBuildInputs = [ makeWrapper copyDesktopItems ];
 
   installPhase = ''
     mkdir -p $out/{bin,share/HMCL}
@@ -44,7 +44,7 @@ in stdenvNoCC.mkDerivation rec {
     description = "A Minecraft Launcher which is multi-functional";
     license = licenses.gpl3;
     platforms = platforms.all;
-    maintainers = with maintainers; [ "7rah" ];
+    maintainers = [ "7rah" ];
     homepage = "https://github.com/huanghongxun/HMCL";
   };
 }
